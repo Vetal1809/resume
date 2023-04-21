@@ -1,0 +1,152 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <h1>{{name}}</h1>
+</div>
+
+<div>
+    <section>
+        <div>
+            <ul>
+
+                <div><strong>Birthdate: </strong>{{birthdate}}</div>
+                <div><strong>Deathdate: </strong>{{deathdate}}</div>
+                <div><strong>Deathplace: </strong>{{deathplace}}</div>
+                <div><strong>Nationality: </strong>{{nationality}}</div>
+                <div><strong>Occupation: </strong>{{occupation}}</div>
+                <br>
+
+            </ul>
+        </div>
+    </section>
+</div>
+<br>
+<hr>
+<div>
+    <section>
+        <div><strong>Know For</strong></div>
+        <br>
+        <div>
+            <p>{{known_for}}</p>
+        </div>
+    </section>
+</div>
+<br>
+<hr>
+<div>
+    <section>
+        <div><b>Education</b></div>
+        <ul>
+            <br>
+            {{#each education}}
+
+            <div>Degree: <em>{{degree}}</em></div>
+            <div>Field: <em>{{field}}</em></div>
+            <div>Institution: <em>{{institution}}</em></div>
+            <div>Year: <em>{{year}}</em></div>
+
+            {{/each}}
+        </ul>
+    </section>
+</div>
+<br>
+<hr>
+<div>
+    <section>
+        <div><b>Notable Publications</b></div>
+        <ul>
+            {{#each notable_publications}}
+            <li>
+                <div><strong>{{title}}</strong></div>
+                <div>{{year}}</div>
+                <div>{{publisher}}</div>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+</div>
+<br>
+<hr>
+<div>
+    <section>
+        <div><b>Partners</b></div>
+        <ul>
+            {{#each partners}}
+            <li>
+                <div><em>Name:</em> {{name}}</div>
+                <div><em>Relationship:</em> {{relationship}}</div>
+                <div><em>Years:</em> {{years}}</div>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+</div>
+<br>
+<hr>
+<div>
+    <section>
+        <div><b>Awards</b></div>
+        <br>
+        {{#each awards}}
+        <div>Title: {{title}}</div>
+        <div>Year: {{year}}</div>
+        <div>Description: {{description}}</div>
+        {{/each}}
+    </section>
+</div>
+<br>
+<hr>
+<div>
+    <section>
+        <div><strong>Influences</strong></div>
+        <br>
+        <div><i></i>{{influences}}</i></div>
+    </section>
+</div>
+<br>
+<hr>
+<div>
+    <section>
+        <div><strong>Influenced</strong></div>
+        <br>
+        <div><i></i>{{influenced}}</i></div>
+    </section>
+</div>
+<br>
+<hr>
+<section>
+    <div><strong>Quotes</strong></div>
+    <br>
+    <div><q>{{quotes}}</q></div>
+</section>
+</div>
+<br>
+<hr>
+<div>
+    <section>
+        <div><b>Major discoveries</b></div>
+        <br>
+        {{#each major_discoveries}}
+        <div>Title: {{title}}</div>
+        <div>Year: {{year}}</div>
+        <div>Description: {{description}}</div>
+        {{/each}}
+    </section>
+</div>
+<br>
+<hr>
+<div>
+    <section>
+        <div><b>Contributions</b></div>
+        <br>
+        {{#with contributions}}
+        <div>Title: {{title}}</div>
+        <div>Description: {{description}}</div>
+        <div>Year: {{year}}</div>
+        <div>Field: {{field}}</div>
+        {{/with}}
+    </section>
+</div>
