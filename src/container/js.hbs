@@ -1,0 +1,117 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+
+    <div>
+        {{> title data="Web" big=true}}
+    </div>
+
+    <div>
+        <section>
+            <p>
+                <br>
+            <h2><span class="badge bg-secondary">{{name}}</span></h2>
+
+
+
+            <br>
+            <hr>
+            <div>Description: {{description}}</div>
+
+            <br>
+            <div>
+                {{#with history}}
+                <div><em>year: </em>{{year}}</div>
+                <div><em>founder: </em>{{founder}}</div>
+                {{/with}}
+            </div>
+            <br>
+            <hr>
+
+            <p><em>types: {{types}}</em></p>
+
+            <br>
+            <hr>
+            <div>
+                <button type="button" class="btn btn-success">Syntax: {{#with syntax}}</button>
+
+                <ul>
+                    <li>
+                        <div>variables: {{variables}}</div>
+                        <div>functions: {{functions}}</div>
+                        <div>conditionals: {{conditionals}}</div>
+                        <div>loops: {{loops}}</div>
+                        <div>classes: {{classes}}</div>
+                    </li>
+                </ul>
+                {{/with}}
+            </div>
+            <br>
+            <hr>
+            <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                    Features
+                </button>
+            </p>
+            <div style="min-height: 120px;">
+                <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                    <div class="card card-body" style="width: 300px;">
+                        <p>
+                            {{features}}
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <hr>
+            <p>
+                <button class="btn btn-info" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                    Libraries
+                </button>
+            </p>
+            <div style="min-height: 120px;">
+                <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                    <div class="card card-body" style="width: 300px;">
+                        <p>
+                            {{libraries}}
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <hr>
+            <p>
+                <button class="btn btn-success" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                    Tools
+                </button>
+            </p>
+            <div style="min-height: 120px;">
+                <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                    <div class="card card-body" style="width: 300px;">
+                        <p>
+                            {{tools}}
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <hr>
+            <div>Community: {{#each community}}</div>
+            <ul>
+                <li>
+                    {{name}}
+                    {{type}}
+                </li>
+            </ul>
+            {{/each}}
+            </p>
+        </section>
+    </div>
+
+</div>
