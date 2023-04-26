@@ -7,7 +7,11 @@
     <div>
         {{> title data="Facebook" big=true}}
     </div>
+    <br>
+    <hr>
     <section>
+        <div><strong>Name: </strong>{{name}}</div>
+
         <div><strong>Users: </strong>{{#each users}}</div>
         <ul>
             <li>
@@ -15,6 +19,7 @@
                 <div><b>Name: </b>{{name}}</div>
                 <div><b>Gender: </b>{{gender}}</div>
                 <div><b>Age: </b>{{age}}</div>
+
                 <div><b>Friends: </b>{{#each friends}}</div>
                 <ul>
                     <li>
@@ -22,6 +27,7 @@
                         <div><b>Name: </b>{{name}}</div>
                         <div><b>Gender: </b>{{gender}}</div>
                         <div><b>Age: </b>{{age}}</div>
+
                         <div><b>Mutual friends: </b>{{#each mutual_friends}}</div>
                         <ul>
                             <li>
@@ -30,7 +36,7 @@
                                 <div><b>Gender: </b>{{gender}}</div>
                                 <div><b>Age: </b>{{age}}</div>
                                 {{#if mutual_friends}}
-                                <div><b>Mutual friends: </b></div>
+                                <div><b>Mutual friends: </b>{{#each mutual_friends}}</div>
                                 <ul>
                                     <li>
                                         <div><b>Id: </b>{{id}}</div>
@@ -39,16 +45,39 @@
                                         <div><b>Age: </b>{{age}}</div>
                                     </li>
                                 </ul>
+                                {{/each}}
                                 {{/if}}
                             </li>
                         </ul>
                         {{/each}}
-                    <li>
+                        {{#if groups}}
+                        <div><b>Groups: </b>{{#each groups}}</div>
+                        <ul>
+                            <li>
+                                <div><b>Id: </b>{{id}}</div>
+                                <div><b>Name: </b>{{name}}</div>
+                                <div><b>Description: </b>{{description}}</div>
+                                <div><b>Members: </b>{{#each members}}</div>
+                                <ul>
+                                    <li>
+                                        <div><b>Id: </b>{{id}}</div>
+                                        <div><b>Name: </b>{{name}}</div>
+                                        <div><b>Gender: </b>{{gender}}</div>
+                                        <div><b>Age: </b>{{age}}</div>
+                                    </li>
+                                </ul>
+                                {{/each}}
+                            </li>
+                        </ul>
+                        {{/each}}
+                        {{/if}}
+
+                    </li>
                 </ul>
                 {{/each}}
                 <br>
                 <hr>
-
+                {{#if groups}}
                 <div><strong>Groups: </strong>{{#each groups}}</div>
                 <ul>
                     <li>
@@ -68,9 +97,7 @@
                     </li>
                 </ul>
                 {{/each}}
-
-                <br>
-                <hr>
+                {{/if}}
             </li>
         </ul>
         {{/each}}
