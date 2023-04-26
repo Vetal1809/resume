@@ -1,0 +1,135 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+
+
+<div>
+    <p>
+        {{> title data="Mac" big=true}}
+    </p>
+</div>
+<br>
+<hr>
+<div>
+    <section>
+        <p>
+        <div><strong>Name: </strong>{{name}}</div>
+        <div><strong>Description: </strong>{{description}}</div>
+        <div><strong>Price: </strong>{{price}}</div>
+        <div><strong>Category: </strong>{{category}}</div>
+        </p>
+    </section>
+</div>
+<br>
+<div>
+    <section>
+        <p>
+        <div><strong>Features: </strong>{{#with features}}</div>
+        <ul>
+            <li>
+                <div><b>Processor: </b>{{#with processor}}</div>
+                <ul>
+                    <li>
+                        <div>Brand: {{brand}}</div>
+                        <div>Model: {{model}}</div>
+                        <div>Speed: {{speed}}</div>
+                        <div>Cores: {{cores}}</div>
+                        <div>Cache: {{cache}}</div>
+                    </li>
+                </ul>
+                {{/with}}
+                <br>
+                <div><b>Memory: </b>{{#with memory}}</div>
+                <ul>
+                    <li>
+                        <div>Type: {{type}}</div>
+                        <div>Size: {{size}}</div>
+                        <div>Speed: {{speed}}</div>
+                    </li>
+                </ul>
+                {{/with}}
+                <br>
+                <div><b>Storage: </b>{{#with storage}}</div>
+                <ul>
+                    <li>
+                        <div>Type: {{type}}</div>
+                        <div>Size: {{size}}</div>
+                    </li>
+                </ul>
+                {{/with}}
+                <br>
+                <div><b>Display: </b>{{#with display}}</div>
+                <ul>
+                    <li>
+                        <div>Size: {{size}}</div>
+                        <div>Resolution: {{resolution}}</div>
+                        <div>Technology: {{technology}}</div>
+                        <div>Color space: {{color_space}}</div>
+                        <div>Brightness: {{brightness}}</div>
+                        <div>Refresh rate: {{refresh_rate}}</div>
+                    </li>
+                </ul>
+                {{/with}}
+                <br>
+                <div><b>Graphics: </b>{{#with graphics}}</div>
+                <ul>
+                    <li>
+                        <div>Brand: {{brand}}</div>
+                        <div>Model: {{model}}</div>
+                        <div>Memory: {{memory}}</div>
+                    </li>
+                </ul>
+                {{/with}}
+                <br>
+                <div><b>Ports: </b>{{#each ports}}</div>
+                <ul>
+                    <li>
+                        <div>Tipe: {{type}}</div>
+                        <div>Count: {{count}}</div>
+                        {{#if features}}
+                        <div>Features: <em>({{features}})</em></div>
+                        {{/if}}
+                    </li>
+                </ul>
+                {{/each}}
+                <br>
+                <div><b>Battery: </b>{{#with battery}}</div>
+                <ul>
+                    <li>
+                        <div>Type: {{type}}</div>
+                        <div>Capacity: {{capacity}}</div>
+                        <div>Life: {{life}}</div>
+                    </li>
+                </ul>
+                {{/with}}
+                <br>
+                <div><b>Weight: {{weight}}</b></div>
+                <br>
+                <div><b>Dimensions: </b>{{#with dimencions}}</div>
+                <ul>
+                    <li>
+                        <div>Height: {{height}}</div>
+                        <div>width: {{width}}</div>
+                        <div>Depth: {{depth}}</div>
+                    </li>
+                </ul>
+                {{/with}}
+                <br>
+                <div><b>Operating system: {{operating_system}}</b></div>
+                <br>
+                <div><B>Accessories: </B>{{#each accessories}}</div>
+                <ul>
+                    <li>
+                        <div>Name: {{name}}</div>
+                        <div>Price: {{price}}</div>
+                    </li>
+                </ul>
+                {{/each}}
+            </li>
+        </ul>
+        {{/with}}
+        </p>
+    </section>
+</div>
