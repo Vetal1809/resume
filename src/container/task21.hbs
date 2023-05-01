@@ -1,0 +1,194 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+
+    <div>
+        {{> title data="task 21" big=true}}
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <section>
+                <div class="card">
+                    <div card="card-body">
+
+
+                        {{#with heading}}
+
+                        <br>
+
+                        <main>
+                            {{#with main}}
+                            <ul>
+
+                                <h1>{{title}}</h1>
+                                <br>
+                                <p>{{text}}</p>
+                                <br>
+                                <button class="btn btn-primary">
+                                    <div>{{button_text.solid}}</div>
+                                </button>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="btn btn-outline-primary">
+                                    {{button_text.outline}}
+                                </button>
+
+                            </ul>
+                            {{/with}}
+                        </main>
+
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="card">
+                    <div card="card-body">
+
+                        {{#with second}}
+
+                        <ul>
+
+                            <h2>{{title}}</h2>
+                            <br>
+                            <p>{{text}}</p>
+                            <br>
+                            <button class="btn btn-secondary">
+                                {{button_text.solid}}
+                            </button>
+                            <br>
+                            <br>
+                            <br>
+                            <button class="btn btn-outline-secondary">
+                                {{button_text.outline}}
+                            </button>
+
+                        </ul>
+                        {{/with}}
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="card">
+                    <div card="card-body">
+
+                        {{#with subblock}}
+
+                        <br>
+                        <ul>
+
+                            <h3>{{title}}</h3>
+                            <br>
+                            <p>{{text}}</p>
+                            <br>
+                            <button class="btn btn-dark">
+                                {{button_text.solid}}
+                            </button>
+                            <br>
+                            <br>
+                            <br>
+                            <button class="btn btn-outline-dark">
+                                {{button_text.outline}}
+                            </button>
+
+                        </ul>
+                        {{/with}}
+                    </div>
+                </div>
+
+                {{/with}}
+        </div>
+    </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section>
+        <div class="card">
+            <div class="card-body">
+                <ul>
+
+
+
+                    {{#with nested_display}}
+                    <div class="display-1">{{title}}</div>
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                            {{#with children_display}}
+                            <ul>
+
+                                <div class="display-4">{{title}}</div>
+                                <p>{{text}}</p>
+                                <br>
+                                <button class="btn btn-warning">
+                                    {{button.text}}
+                                </button>
+
+                            </ul>
+                            {{/with}}
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <h6>{{header_text}}</h6>
+                    <br>
+                    <button class="btn btn-info">
+                        {{button.text}}
+                    </button>
+                    {{/with}}
+                    <br>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section>
+        <div class="card">
+            <div class="card-body">
+                <ul>
+
+                    {{#with paragraph}}
+
+                    <p class="text-uppercase">titli: {{title}}</>
+                    <p class="text-lowercase">{{text}}</>
+                        <br>
+                        <br>
+
+
+                        <a class="btn btn-outline-ginfo" href="{{button.url}}" target="blank"
+                            role="button">{{button.text}}</a>
+
+                        <br>
+                        <br>
+                        <br>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-info">
+                                <ul>
+                                    {{#each list_name}}
+                                    <li>
+
+                                        <a class="text-info" href="{{url}}" target="blank">{{text}}</a>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {{/with}}
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+</div>
