@@ -1,0 +1,139 @@
+<div>
+    <div>
+        {{> title data="shophome" big=true}}
+    </div>
+
+    <main>
+        <div class="row mb-5">
+            <hr>
+            {{#with navigation}}
+            <div class="row nav-tabs pt-5 pb-5">
+                {{#each links}}
+                <div class="col-2 text-primary">
+                    <a class="nav-link col-2 text-primary" href="{{href}}">{{text}}</a>
+                </div>
+                {{/each}}
+                <a class="nav-link col-2 desabled text-dark">Desabled</a>
+            </div>
+            {{/with}}
+            <div class="row mb-5">
+                {{#with newsBlock}}
+                <h1 class="text-center mt-5 mb-5">{{title}}</h1>
+                {{#each cards}}
+                <div class="col-5 m-1 card text-bg-dark">
+                    <div class="badge">
+
+                        <div class="card-title">
+                            <div>{{title}}</div>
+                        </div>
+                        {{#if isTop}}
+                        <button class="btn btn-danger rounded-pill">Top</button>
+                        {{/if}}
+                        {{#if isNew}}
+                        <button class="btn btn-success rounded-pill">New</button>
+                        {{/if}}
+                    </div>
+                    <div class="card-body">{{description}}
+
+                    </div>
+                </div>
+                {{/each}}
+                {{/with}}
+            </div>
+            <hr>
+            {{#with goodsBlock}}
+            <div class="row col-12 nav mt-5">
+                {{#each tabs}}
+                <div class="col-3 nav-item mb-5">
+                    {{#if isActive}}
+                    {{#unless isDisabled}}
+                    <div class="nav-link active text-dark pe-5">{{text}}</div>
+                    {{/unless}}
+                    {{/if}}
+                    {{#unless isActive}}
+                    {{#unless isDisabled}}
+                    <div class="text-primary pe-5">{{text}}</div>
+                    {{/unless}}
+                    {{/unless}}
+                    {{#unless isActive}}
+                    {{#if isDisabled}}
+                    <div class="text-secondary pe-5">{{text}}</div>
+                    {{/if}}
+                    {{/unless}}
+                </div>
+                {{/each}}
+                <div class="row">
+                    {{#each cards}}
+
+                    <div class="col-3 card m-1">
+
+
+                        <img class="card-img-top" src="{{image}}">
+
+
+                        <div class="card-title">
+                            <h5>{{title}}</h5>
+                            <div class="badge">
+                                {{#if isHot}}
+                                <button class="btn btn-danger rounded-pill">Hot</button>
+                                {{/if}}
+                                {{#if isNew}}
+                                <button class="btn btn-success rounded-pill">New</button>
+                                {{/if}}
+                            </div>
+                        </div>
+                        <div class="card-body">
+
+                            <div>{{description}}</div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/with}}
+        <hr>
+        {{#with subscribe}}
+        <div class="alert alert-dark mt-5 mb-5">
+
+            <h2>{{header}}</h2>
+            <p>{{description}}</p>
+            {{#each buttons}}
+            <div class="row col-12 m-2">
+                <a class="col-3 btn btn-primary" href="{{link}}">{{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+        <hr>
+        {{#with service}}
+        <div class="alert alert-success mt-5 mb-5">
+
+            <h2 class="text-center">{{title}}</h2>
+            <p class="text-center">{{description}}</p>
+            {{#each buttons}}
+            <div class="text-center">
+                <a class="btn btn-primary" href="{{link}}">{{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+        <hr>
+
+        <div class="row">
+            <ul class="nav">
+                {{#each footer}}
+                <div class="col-2">
+                    {{#each this}}
+                    <li class="nav-item p-2">
+                        <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{link}}">{{text}}</a>
+                    </li>
+                    {{/each}}
+                </div>
+                {{/each}}
+            </ul>
+        </div>
+
+</div>
+</main>
+</div>
