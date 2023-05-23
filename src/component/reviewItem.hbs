@@ -1,0 +1,51 @@
+<div class="card me-2 mb-3">
+    <div class="card-title m-2">
+        {{#with title}}
+        <h4>{{userName}}</h4>
+        <caption>{{caption}}</caption>
+        <p>{{date}}</p>
+        {{/with}}
+    </div>
+    <hr>
+
+    {{#with reviewBody}}
+    <div class="card-body">
+        {{#with seller}}
+        <p>{{title}}:<b> {{value}}</b></p>
+        {{/with}}
+        {{#with rating}}
+        <p>{{title}}: {{value}}</p>
+        {{/with}}
+        {{#each text}}
+        <div class="mb-3">{{this}}</div>
+        {{/each}}
+        {{#with advantages}}
+        <b>{{title}}:</b>
+        <p>{{text}}</p>
+        {{/with}}
+        {{#with disadvantages}}
+        <b>{{title}}:</b>
+        <p>{{text}}</p>
+        {{/with}}
+        <div class="row col-4">
+            {{#each images}}
+            <div class="row col-4">
+
+                <img src="{{this}}" width="100px" class="m-2">
+            </div>
+
+            {{/each}}
+        </div>
+
+    </div>
+
+    {{#each coments}}
+    <div class="card ms-5 ps-2 mt-3 mb-3">
+        <h4>{{userName}}</h4>
+        <caption>{{date}}</caption>
+        <p>{{text}}</p>
+    </div>
+    {{/each}}
+
+    {{/with}}
+</div>
