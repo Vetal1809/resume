@@ -78,39 +78,40 @@
 
                     {{/with}}
                 </div>
-            </div>
+                <div class="col-4">
+                    {{#with goodsInfo}}
 
-            <div class="col-4">
-                {{#with goodsInfo}}
-
-                <div class="card mb-3">
-                    <div class="card" width="200px" class="m-2">
-                        <img src="{{photo}}">
+                    <div class="card mb-3">
+                        <div class="card" width="200px" class="m-2">
+                            <img src="{{photo}}">
+                        </div>
+                        <div class="card-body">
+                            <div>{{name}}</div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <div>{{name}}</div>
+                    <div class="card">
+                        <div class="ms-2">{{price}}</div>
+                        {{#if inMarket}}
+                        <div class="ms-2">Є в наявності</div>
+                        {{/if}}
+                        {{#each buttons}}
+                        {{#if isPrimary}}
+                        <button class="col-5 btn btn-primary btn-sm m-2" href="{{link}}"
+                            target="blank">{{text}}</button>
+                        {{/if}}
+                        {{#if isSecondary}}
+                        <button class="col-8 btn btn-secondary btn-sm m-2" href="{{link}}"
+                            target="blank">{{text}}</button>
+                        {{/if}}
+                        {{/each}}
                     </div>
-                </div>
-                <div class="card">
-                    <div class="ms-2">{{price}}</div>
-                    {{#if inMarket}}
-                    <div class="ms-2">Є в наявності</div>
-                    {{/if}}
-                    {{#each buttons}}
-                    {{#if isPrimary}}
-                    <button class="col-5 btn btn-primary btn-sm m-2" href="{{link}}" target="blank">{{text}}</button>
-                    {{/if}}
-                    {{#if isSecondary}}
-                    <button class="col-8 btn btn-secondary btn-sm m-2" href="{{link}}" target="blank">{{text}}</button>
-                    {{/if}}
-                    {{/each}}
-                </div>
-                <div class="card mt-2">
-                    {{#with seller}}
-                    <div class="m-2"><span>{{title}}:</span><b> {{value}}</b></div>
+                    <div class="card mt-2">
+                        {{#with seller}}
+                        <div class="m-2"><span>{{title}}:</span><b> {{value}}</b></div>
+                        {{/with}}
+                    </div>
                     {{/with}}
                 </div>
-                {{/with}}
             </div>
         </div>
         {{/with}}
