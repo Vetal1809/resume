@@ -1,0 +1,40 @@
+<div class="ms-5 mt-5">
+    {{> title data="index8" big=true}}
+</div>
+
+<main>
+    <section>
+        <div class="row col-12 mt-5">
+            {{#with title}}
+            <div class="col-7 ms-5">
+                <h5>{{name}} {{lastname}}</h5>
+            </div>
+            <div class="col-3">
+                <h5>{{description}}</h5>
+            </div>
+            {{/with}}
+        </div>
+    </section>
+    <div>
+        <hr>
+    </div>
+    <section>
+        <div class="row col-12 mt-5 ms-5">
+            <div class="col-7">
+                {{#with projects}}
+                <h3>{{title}}</h3>
+                <p>{{information}}</p>
+                <div class="mt-5">
+                    {{#each buttons}}
+                    <div class="col-3 m-3">
+                        {{#if isPrimary}}
+                        <a class="btn btn-primary" href="{{link}}" target="blank">{{text}}</a>
+                        {{/if}}
+                    </div>
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+        </div>
+    </section>
+</main>
